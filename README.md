@@ -29,11 +29,14 @@ tetrathionate are present" using characterised promoter response data.
 ### Backend
 
 ```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements.txt
+python -m venv backend/.venv
+source backend/.venv/bin/activate
+pip install -r backend/requirements.txt
+# Run from the repository root so the ``backend`` package is discoverable
 uvicorn backend.main:app --reload
+
+# Alternatively run from inside ``backend/`` using the local module path
+# uvicorn main:app --reload
 ```
 
 The API will be available on `http://localhost:8000`.
